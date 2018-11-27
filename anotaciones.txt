@@ -1,0 +1,12 @@
+Paginas de Consulta
+https://expressjs.com/en/starter/generator.html // backend
+http://docs.sequelizejs.com/manual/installation/getting-started.html //sequelize
+
+1. Instalacion del backend
+se utilizan los siguientes comandos
+-npm install express-generator -g
+-express --view=pug "se coloca en nombre del backend"
+Luego ingreso a la carpeta del backend y se ejecuta el comando
+-npm install // Actualiza y agrega las dependencias faltantes
+-npm install --save sequelize
+
