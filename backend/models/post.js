@@ -41,12 +41,7 @@ module.exports = (sequelize, DataTypes) => {
         });
  
         Post.belongsTo(models.User, {
-            // through: 'user_post'
-            foreignKey: 'id'
-        });
- 
-        Post.belongsTo(models.File, {
-            foreignKey: 'photo'
+            foreignKey: 'user'
         });
     };
 
