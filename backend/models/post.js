@@ -40,8 +40,9 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'post'
         });
  
-        Post.belongsToMany(models.User, {
-            through: 'user_post'
+        Post.belongsTo(models.User, {
+            // through: 'user_post'
+            foreignKey: 'id'
         });
  
         Post.belongsTo(models.File, {
