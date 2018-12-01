@@ -2,7 +2,11 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var sessionVerifier = require('./modules/session-verifier');
 var logger = require('morgan');
+var device = require('express-device');
+
+require('./modules/authentication-verifier');
 
 var indexRouter = require('./routes/index');
 var postRouter = require('./routes/post');
@@ -20,7 +24,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(device.capture({ parseUserAgent: true }));
 
+app.use(sessionVerifier.restoreSessionFix);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/file', fileRouter);
