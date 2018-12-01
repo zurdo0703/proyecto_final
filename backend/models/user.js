@@ -67,7 +67,7 @@ module.exports = (sequelize, DataTypes) => {
 
     User.associate = models => {
         //asociar los roles
-        User.belongsTo(models.Post, {
+        User.hasMany(models.Post, {
             foreignKey: 'user'
         });
 
@@ -81,8 +81,9 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'user1'
         });
 
-        User.hasMany(models.User, {
-            // as: 'friends',
+        User.belongsToMany(models.User, {
+            as: 'friends2',
+            through: 'user_friends',
             foreignKey: 'user2'
         });
     };
