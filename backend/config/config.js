@@ -23,7 +23,7 @@ config.database.operatorsAliases = false;
 
 config.sequelize = {};
 config.sequelize.sync = {};
-config.sequelize.sync.force = false;
+config.sequelize.sync.force = true;
 config.sequelize.sync.logging = null;
 
 config.crypto = {};

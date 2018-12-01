@@ -40,12 +40,8 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'post'
         });
  
-        Post.belongsToMany(models.User, {
-            through: 'user_post'
-        });
- 
-        Post.belongsTo(models.File, {
-            foreignKey: 'photo'
+        Post.belongsTo(models.User, {
+            foreignKey: 'user'
         });
     };
 
