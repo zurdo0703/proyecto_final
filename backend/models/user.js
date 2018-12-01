@@ -67,8 +67,9 @@ module.exports = (sequelize, DataTypes) => {
 
     User.associate = models => {
         //asociar los roles
-        User.belongsTo(models.Post, {
-            foreignKey: 'user'
+        User.hasMany(models.Post, {
+            as: 'posts',
+            foreignKey: 'id'
         });
 
         User.belongsTo(models.File, {
@@ -80,11 +81,11 @@ module.exports = (sequelize, DataTypes) => {
             through: 'user_friends',
             foreignKey: 'user1'
         });
-
-        User.hasMany(models.User, {
-            // as: 'friends',
-            foreignKey: 'user2'
-        });
+    
+        // User.hasMany(models.User, {
+        //     // as: 'friends',
+        //     foreignKey: 'user2'
+        // });
     };
 
     return User;
