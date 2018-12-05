@@ -34,7 +34,7 @@ router.put('/save/:id', (req, res, next) => {
   let values = req.query;
   values.id = req.params.id;
   object.update([
-    'texto'
+    'texto','id_file'
   ], values, 'Post')
     .then(response => {
       res.json({ status: true, content: response });
