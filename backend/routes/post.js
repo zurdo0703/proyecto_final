@@ -13,7 +13,7 @@ router.get('/:id', (req, res, next) => {
     });
 });
 
-router.post('/save', (req, res, next) => {
+router.post('/save', passport.authenticate('bearer', { session: false }), (req, res, next) => {
   object.save([
     'texto', 'id_file'
   ], req.query, 'Post')
@@ -22,6 +22,8 @@ router.post('/save', (req, res, next) => {
       commandPost[0].content.user = req.session.user.id;
       commandPost[0].content.save();
       commandUtils.replaceCommand('model', 'post', response, commandPost[0]);
+
+      
 
       res.json({ status: true, content: response });
     })
