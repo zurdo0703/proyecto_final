@@ -32,7 +32,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/file', fileRouter);
 app.use('/post', postRouter);
-app.use('/coment', comentRouter);
+app.use('/post', comentRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -71,6 +71,11 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'user'
         });
 
+        User.hasMany(models.coment, {
+            foreignKey: 'user'
+        });
+
+
         User.belongsTo(models.File, {
             foreignKey: 'photo'
         });
