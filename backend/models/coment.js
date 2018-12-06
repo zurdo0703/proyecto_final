@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = (sequelize, DataTypes) => {
-    let Post = sequelize.define('Post', {
+    let Coment = sequelize.define('coment', {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        
+
     }, {
             // don't add the timestamp attributes (updatedAt, createdAt)
             timestamps: true,
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
             freezeTableName: true,
 
             // define the table's name
-            tableName: 'post',
+            tableName: 'coment',
 
             // Enable optimistic locking.  When enabled, sequelize will add a version count attribute
             // to the model and throw an OptimisticLockingError error when stale instances are saved.
@@ -35,21 +35,7 @@ module.exports = (sequelize, DataTypes) => {
             version: false
         });
 
-    Post.associate = models => {
-        Post.belongsTo(models.File, {
-            foreignKey: 'id_file'
-        });
- 
-        Post.belongsTo(models.User, {
-            foreignKey: 'user'
-        });
-        
-        Post.hasMany(models.coment, {
-            foreignKey: 'id'
-        });
+    
 
-        
-    };
-
-    return Post;
+    return Coment;
 };
