@@ -4,10 +4,10 @@ var object = require('../modules/objectsAndTypes');
 var commandUtils = require('../modules/commandUtils');
 
 
-router.post('/:id/coment/save/', passport.authenticate('bearer', { session: false }), (req, res, next) => {
+router.post('/:id/like/save/', passport.authenticate('bearer', { session: false }), (req, res, next) => {
   object.save([
-    'texto',
-  ], req.query, 'coment')
+    'accion',
+  ], req.query, 'like')
     .then(response => {
 
 

@@ -11,7 +11,8 @@ require('./modules/authentication-verifier');
 var allRouter = require('./routes/all');
 var indexRouter = require('./routes/index');
 var postRouter = require('./routes/post');
-var comentRouter = require('./routes/coment');
+var commentRouter = require('./routes/comment');
+var likeRouter = require('./routes/like');
 var usersRouter = require('./routes/users');
 var fileRouter = require('./routes/file');
 
@@ -32,7 +33,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/file', fileRouter);
 app.use('/post', postRouter);
-app.use('/post', comentRouter);
+app.use('/post', commentRouter);
+app.use('/post', likeRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

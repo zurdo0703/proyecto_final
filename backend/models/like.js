@@ -1,15 +1,9 @@
 "use strict";
 
 module.exports = (sequelize, DataTypes) => {
-    let Coment = sequelize.define('coment', {
-        id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            allowNull: false,
-            primaryKey: true
-        },
-        texto: {
-            type: DataTypes.TEXT,
+    let Like = sequelize.define('Like', {
+        accion: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
 
@@ -27,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
             freezeTableName: true,
 
             // define the table's name
-            tableName: 'coment',
+            tableName: 'like',
 
             // Enable optimistic locking.  When enabled, sequelize will add a version count attribute
             // to the model and throw an OptimisticLockingError error when stale instances are saved.
@@ -37,5 +31,5 @@ module.exports = (sequelize, DataTypes) => {
 
     
 
-    return Coment;
+    return Like;
 };
