@@ -7,7 +7,7 @@ var object = require('../modules/objectsAndTypes');
 router.post('/:id/comment/save/', passport.authenticate('bearer', { session: false }), (req, res, next) => {
   object.save([
     'texto',
-  ], req.query, 'comment')
+  ], req.query, 'Comment')
     .then(response => {
 
 
