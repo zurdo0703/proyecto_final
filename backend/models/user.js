@@ -95,11 +95,11 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'user2'
         });
         
-        // User.belongsToMany(models.Like, {
-        //     as: 'likes',
-        //     through: 'like',
-        //     foreignKey: 'user'
-        // });
+        User.belongsToMany(models.Like, {
+            as: 'likes',
+            through: 'like',
+            foreignKey: 'user'
+        });
 
     };
 

@@ -2,12 +2,6 @@
 
 module.exports = (sequelize, DataTypes) => {
     let Like = sequelize.define('Like', {
-        id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            allowNull: false,
-            primaryKey: true
-        },
         accion: {
             type: DataTypes.STRING,
             allowNull: false,
