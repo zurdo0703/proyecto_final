@@ -13,7 +13,7 @@ router.get('/:id', (req, res, next) => {
     });
 });
 
-router.post('/save', (req, res, next) => {
+router.post('/save', (req, res, next) => {  
   object.save([
     'email', 'password', 'firstName', 'lastName', 'birthday'
   ], req.query, 'User')
