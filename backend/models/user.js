@@ -66,7 +66,7 @@ module.exports = (sequelize, DataTypes) => {
         });
 
     User.associate = models => {
-        
+
         User.hasMany(models.Post, {
             as: 'posts',
             foreignKey: 'user'
@@ -94,11 +94,10 @@ module.exports = (sequelize, DataTypes) => {
             through: 'user_friends',
             foreignKey: 'user2'
         });
-        
-        User.belongsToMany(models.Like, {
+
+        User.hasMany(models.Like, {
             as: 'likes',
-            through: 'like',
-            foreignKey: 'user'
+            foreignKey: 'user',
         });
 
     };
