@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = (sequelize, DataTypes) => {
-    let Comment = sequelize.define('comment', {
+    let Comment = sequelize.define('Comment', {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,

@@ -53,7 +53,7 @@ module.exports = (sequelize, DataTypes) => {
         
         Post.belongsToMany(models.Like, {
             as: 'likes',
-            through: 'post_like',
+            through: 'like',
             foreignKey: 'post'
         });
 
