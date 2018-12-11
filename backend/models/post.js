@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        
+
     }, {
             // don't add the timestamp attributes (updatedAt, createdAt)
             timestamps: true,
@@ -40,24 +40,21 @@ module.exports = (sequelize, DataTypes) => {
             as: 'foto',
             foreignKey: 'id_file'
         });
-        
+
         Post.belongsTo(models.User, {
             as: 'autor',
             foreignKey: 'user'
         });
-        
+
         Post.hasMany(models.Comment, {
             as: 'comentarios',
             foreignKey: 'post'
         });
-        
-        Post.belongsToMany(models.Like, {
-            as: 'likes',
-            through: 'like',
-            foreignKey: 'post'
-        });
 
-        
+        Post.hasMany(models.Like, {
+            as: 'likes',
+            foreignKey: 'post',
+        });
     };
 
     return Post;

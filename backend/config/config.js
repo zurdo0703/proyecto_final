@@ -24,7 +24,7 @@ config.database.operatorsAliases = false;
 config.sequelize = {};
 config.sequelize.sync = {};
 config.sequelize.sync.force = false;
-config.sequelize.sync.logging = console.log(null);
+config.sequelize.sync.logging = null;
 
 config.crypto = {};
 config.crypto.salt = "o8y¿¡nw4v5@pym5+pq98y oq w6 j{w5{6´j w{56o,jw4*pi6mjr46w59phu$sa(q4n5)hñq45hñq3";

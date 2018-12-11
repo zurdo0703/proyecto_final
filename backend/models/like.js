@@ -35,7 +35,5 @@ module.exports = (sequelize, DataTypes) => {
             version: false
         });
 
-    
-
     return Like;
 };
