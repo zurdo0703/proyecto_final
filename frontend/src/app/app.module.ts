@@ -8,9 +8,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RegisterComponent } from './user/register/register.component';
+import { PostComponent } from './post/post/post.component';
+import { LikeComponent } from './like/like/like.component';
+import { CommentComponent } from './comment/comment/comment.component';
+import { FileComponent } from './file/file/file.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RegisterComponent, PostComponent, LikeComponent, CommentComponent, FileComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
