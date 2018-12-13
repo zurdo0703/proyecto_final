@@ -15,9 +15,21 @@ import { CommentComponent } from './comment/comment/comment.component';
 import { FileComponent } from './file/file/file.component';
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, PostComponent, LikeComponent, CommentComponent, FileComponent],
+  declarations: [
+    AppComponent,
+    RegisterComponent,
+    PostComponent,
+    LikeComponent,
+    CommentComponent,
+    FileComponent],
+
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,

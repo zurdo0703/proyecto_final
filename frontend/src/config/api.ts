@@ -11,7 +11,9 @@ export class API {
         login: `${API.SERVER}/users/login`,
         logput: `${API.SERVER}/users/logout`
     };
-    static post = {
+
+    // post se refiere a la publicación 
+    static post = { 
         get: `${API.SERVER}/post/`,
         save: `${API.SERVER}/post/save`,
         delete: `${API.SERVER}/post/delete`
