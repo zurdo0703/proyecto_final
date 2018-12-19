@@ -13,7 +13,7 @@ router.get('/:id', (req, res, next) => {
     });
 });
 
-router.post('/save', (req, res, next) => {
+router.post('/save', passport.authenticate('bearer', { session: false }), (req, res, next) => {
   object.save([
     'texto', 'id_file'
   ], req.query, 'Post')
@@ -22,6 +22,8 @@ router.post('/save', (req, res, next) => {
       commandPost[0].content.user = req.session.user.id;
       commandPost[0].content.save();
       commandUtils.replaceCommand('model', 'post', response, commandPost[0]);
+
+      
 
       res.json({ status: true, content: response });
     })
@@ -34,7 +36,7 @@ router.put('/save/:id', (req, res, next) => {
   let values = req.query;
   values.id = req.params.id;
   object.update([
-    'texto'
+    'texto','id_file'
   ], values, 'Post')
     .then(response => {
       res.json({ status: true, content: response });
@@ -53,5 +55,6 @@ router.delete('/delete/:id', (req, res, next) => {
       res.json({ status: false, content: response });
     });
 });
+
 
 module.exports = router;

@@ -1,0 +1,34 @@
+<ion-content padding>
+  <form (submit)="registerAction($event)">
+    <ion-list>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="./assets/img/LOGO.jpg">
+        </ion-avatar>
+      </ion-item>
+    </ion-list>
+    <ion-item>
+      <ion-label>Name:</ion-label>
+      <ion-input type="text" name="firstname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last Name:</ion-label>
+      <ion-input type="text" name="lastname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Birthday:</ion-label>
+      <ion-input type="date" name="birthday"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-input type="text" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password:</ion-label>
+      <ion-input type="password" name="pasword"></ion-input>
+    </ion-item>
+
+    <ion-button color="primary" type="submit" block>Register</ion-button>
+    <ion-button color="danger" routerLink="/login">atras</ion-button>
+  </form>
+</ion-content>

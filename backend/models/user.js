@@ -66,12 +66,20 @@ module.exports = (sequelize, DataTypes) => {
         });
 
     User.associate = models => {
-        //asociar los roles
+
         User.hasMany(models.Post, {
+            as: 'posts',
             foreignKey: 'user'
         });
 
+        User.hasMany(models.Comment, {
+            as: 'comentarios',
+            foreignKey: 'user'
+        });
+
+
         User.belongsTo(models.File, {
+            as: 'foto',
             foreignKey: 'photo'
         });
 
@@ -86,6 +94,12 @@ module.exports = (sequelize, DataTypes) => {
             through: 'user_friends',
             foreignKey: 'user2'
         });
+
+        User.hasMany(models.Like, {
+            as: 'likes',
+            foreignKey: 'user',
+        });
+
     };
 
     return User;
