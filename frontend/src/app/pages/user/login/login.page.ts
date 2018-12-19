@@ -12,6 +12,7 @@ export class LoginPage implements OnInit {
   public username = '';
   public password = '';
   protected isLogged: Boolean;
+
   constructor(
     private navCtrl: NavController,
     private loadingCtrl: LoadingController,
@@ -23,10 +24,9 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   }
-  async  loginAction(e) {
+  async loginAction(e) {
     const loader = await this.loadingCtrl.create({
       message: "Entrando",
-      spinner: 'crescent',
       duration: 3000
     });
 
@@ -55,7 +55,9 @@ export class LoginPage implements OnInit {
             showCloseButton: true,
             closeButtonText: "Cerrar",
             cssClass: 'message error-message'
-          }).present();
+          }).then(toast => {
+            toast.present();
+          });
         }
       }).catch(console.log);
   }
