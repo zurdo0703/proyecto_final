@@ -24,6 +24,7 @@ export class API {
         delete: `${API.SERVER}/post/:id/like/`
     };
     static comment = {
+        get: `${API.SERVER}/post/:id/comment/`,
         save: `${API.SERVER}/post/:id/comment/`,
         delete: `${API.SERVER}/post/:id/comment/`
     };

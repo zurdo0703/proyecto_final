@@ -4,6 +4,17 @@ var object = require('../modules/objectsAndTypes');
 //var commandUtils = require('../modules/commandUtils');
 
 
+
+router.get('/:id/comment/', (req, res, next) => {
+  object.get('Comment', req.params.id, 1)
+    .then(response => {
+      res.json({ status: true, content: response });
+    })
+    .catch(response => {
+      res.json({ status: false, content: response });
+    });
+});
+
 router.post('/:id/comment/save/', passport.authenticate('bearer', { session: false }), (req, res, next) => {
   object.save([
     'texto',
