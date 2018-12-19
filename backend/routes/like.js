@@ -7,7 +7,7 @@ var commandUtils = require('../modules/commandUtils');
 router.post('/:id/like/save/', passport.authenticate('bearer', { session: false }), (req, res, next) => {
   object.save([
     'accion',
-  ], req.query, 'like')
+  ], req.query, 'Like')
     .then(response => {
 
 
