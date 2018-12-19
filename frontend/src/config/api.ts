@@ -19,6 +19,7 @@ export class API {
         delete: `${API.SERVER}/post/delete`
     };
     static like = {
+        get: `${API.SERVER}/post/:id/like/`,
         save: `${API.SERVER}/post/:id/like/`,
         delete: `${API.SERVER}/post/:id/like/`
     };
