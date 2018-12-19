@@ -9,10 +9,6 @@ router.post('/:id/comment/save/', passport.authenticate('bearer', { session: fal
     'texto',
   ], req.query, 'Comment')
     .then(response => {
-
-
-      
-
       res.json({ status: true, content: response });
     })
     .catch(response => {
@@ -20,6 +16,15 @@ router.post('/:id/comment/save/', passport.authenticate('bearer', { session: fal
     });
 });
 
+router.delete('/:id/comment/delete/', passport.authenticate('bearer', { session: false }), (req, res, next) => {
+  object.delete('Comment', req.params.id)
+    .then(response => {
+      res.json({ status: true, content: response });
+    })
+    .catch(response => {
+      res.json({ status: false, content: response });
+    });
+});
 
 
 

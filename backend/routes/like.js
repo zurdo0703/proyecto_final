@@ -10,14 +10,16 @@ router.post('/:id/like/save/', passport.authenticate('bearer', { session: false 
   ], req.query, 'Like')
     .then(response => {
 
+      res.json({ status: true, content: response });
+    })
+    .catch(response => {
+      res.json({ status: false, content: response });
+    });
+});
 
-      // let commandPost = commandUtils.getCommand('model', response);
-      // commandPost[0].content.user = req.session.user.id;
-      // commandPost[0].content.save();
-      // commandUtils.replaceCommand('model', 'post', response, commandPost[0]);
-
-
-
+router.delete('/:id/like/delete/', passport.authenticate('bearer', { session: false }), (req, res, next) => {
+  object.delete('Like', req.params.id)
+    .then(response => {
       res.json({ status: true, content: response });
     })
     .catch(response => {
