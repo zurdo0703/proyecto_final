@@ -12,5 +12,7 @@ export class RegisterPage implements OnInit {
 
   ngOnInit() {
   }
-
+  registerAction() {
+    console.log('register action');
+  }
 }

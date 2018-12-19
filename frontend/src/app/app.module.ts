@@ -1,3 +1,4 @@
+import { UserProxy } from './../helpers/proxy/user.proxy';
 import { Proxy } from './../helpers/proxy/proxy';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -37,6 +38,7 @@ import { LoginPageModule } from './pages/user/login/login.module';
   providers: [
     StatusBar,
     SplashScreen,
+    UserProxy,
     Proxy,
     HttpClient,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

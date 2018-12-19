@@ -1,14 +1,14 @@
 <ion-content padding>
-  <form (ngSubmit)="loginAction()">
+  <form (ngSubmit)="loginAction($event)">
     <ion-item>
-      <ion-input placeholder="Username"></ion-input>
+      <ion-input required placeholder="Username" name="username" [(ngModel)]="username"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input required type="password" placeholder="Password"></ion-input>
+      <ion-input required type="password" placeholder="Password" name="password" [(ngModel)]="password"></ion-input>
     </ion-item>
 
-    <ion-button expand="full" type="submit">Iniciar Sesion</ion-button>
-    <ion-button expand="full" color="danger" routerLink="/register">registrarse</ion-button>
+    <ion-button type="submit">Iniciar Sesion</ion-button>
+    <ion-button color="danger" routerLink="/register">registrarse</ion-button>
   </form>
 </ion-content>
