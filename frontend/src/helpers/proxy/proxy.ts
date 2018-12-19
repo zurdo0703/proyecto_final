@@ -3,6 +3,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class Proxy {
-    constructor(public user: UserProxy) {
-    }
+  constructor(public user: UserProxy) {
+  }
 }
