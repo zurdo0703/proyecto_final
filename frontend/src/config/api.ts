@@ -30,6 +30,7 @@ export class API {
     };
     static file = {
         get: `${API.SERVER}/file/get/:id`,
-        save: `${API.SERVER}/file/upload`
+        save: `${API.SERVER}/file/upload`,
+        delete: `${API.SERVER}/file/delete/:id`
     };
 }

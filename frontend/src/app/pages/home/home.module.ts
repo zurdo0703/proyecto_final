@@ -7,13 +7,17 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
 import { PostComponent } from 'src/app/post/post/post.component';
 
+
+
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
+    IonicModule,  
     RouterModule.forChild([
-      { path: '', component: HomePage }
+      { path: '', component: HomePage, }
     ])
   ],
   declarations: [HomePage, PostComponent]

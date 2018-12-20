@@ -1,0 +1,22 @@
+<ion-content padding>
+  <form (submit)="registerAction($event)">
+    <ion-list>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="./assets/img/LOGO.jpg">
+        </ion-avatar>
+      </ion-item>
+    </ion-list>
+    <ion-item>
+      <ion-label>File Upload:</ion-label>
+      <ion-input type="file" name="file"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>comment:</ion-label>
+      <ion-input type="text" name="comment"></ion-input>
+    </ion-item>
+
+    <ion-button color="primary" type="submit" block>submit</ion-button>
+    <ion-button color="danger" routerLink="/home">atras</ion-button>
+  </form>
+</ion-content>
